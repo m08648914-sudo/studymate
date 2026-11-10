@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>StudyMate AI</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>StudyMate AI</h1>
+  <div class="hbtns">
+    <button id="langBtn" class="chip" aria-label="Language">EN</button>
+    <button id="themeBtn" class="chip" aria-label="Theme">🌙</button>
+  </div>
+</header>
+
+<main>
+  <!-- CHAT -->
+  <section id="chat" class="view active">
+    <div id="msgs" class="msgs"></div>
+    <div class="inputrow">
+      <input id="chatIn" placeholder="Apna sawal likho..." autocomplete="off">
+      <button id="chatSend" class="btn">Bhejo</button>
+    </div>
+  </section>
+
+  <!-- NOTES -->
+  <section id="notes" class="view">
+    <div class="card">
+      <input id="noteTopic" placeholder="Topic likho (jaise Photosynthesis)">
+      <button id="noteGen" class="btn full">Notes banao</button>
+    </div>
+    <h3>Saved notes</h3>
+    <div id="noteList"></div>
+  </section>
+
+  <!-- QUIZ -->
+  <section id="quiz" class="view">
+    <div class="card" id="quizSetup">
+      <input id="quizTopic" placeholder="Quiz topic (jaise Cell Biology)">
+      <select id="quizN">
+        <option value="5">5 sawal</option>
+        <option value="10">10 sawal</option>
+        <option value="15">15 sawal</option>
+      </select>
+      <button id="quizGo" class="btn full">Quiz shuru karo</button>
+      <h3>Pichle scores</h3>
+      <div id="scoreList"></div>
+    </div>
+    <div class="card hide" id="quizBox"></div>
+  </section>
+
+  <!-- ESSAY -->
+  <section id="essay" class="view">
+    <div class="card">
+      <input id="essayTopic" placeholder="Essay ya answer ka topic">
+      <select id="essayLen">
+        <option value="100">Short (~100 words)</option>
+        <option value="250" selected>Medium (~250 words)</option>
+        <option value="500">Long (~500 words)</option>
+      </select>
+      <button id="essayGo" class="btn full">Likho</button>
+    </div>
+    <div id="essayOut"></div>
+  </section>
+
+  <!-- SETTINGS -->
+  <section id="settings" class="view">
+    <div class="card">
+      <h3>Gemini API key</h3>
+      <input id="keyIn" type="password" placeholder="API key paste karo" autocomplete="off">
+      <h3>Model</h3>
+      <input id="modelIn" placeholder="gemini-3.5-flash" autocomplete="off">
+      <button id="saveSet" class="btn full">Settings save karo</button>
+    </div>
+    <div class="card">
+      <h3>Data</h3>
+      <button id="clearAll" class="btn danger full">Saara data delete karo</button>
+    </div>
+  </section>
+</main>
+
+<div id="toast" class="toast hide"></div>
+
+<nav>
+  <button data-v="chat" class="on"><span>💬</span>Chat</button>
+  <button data-v="notes"><span>📝</span>Notes</button>
+  <button data-v="quiz"><span>🧠</span>Quiz</button>
+  <button data-v="essay"><span>✍️</span>Essay</button>
+  <button data-v="settings"><span>⚙️</span>Settings</button>
+</nav>
+
+<script src="script.js"></script>
+</body>
+</html>
